@@ -6,7 +6,7 @@ function Layout({ children }) {
   return (
     <div className="container">
       <div className="layout">
-        <main id="main" className="main-content" role="main">
+        <main id="main" className="main-content" role="main" tabIndex="-1">
           {children}
         </main>
         
