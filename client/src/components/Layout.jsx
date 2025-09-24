@@ -19,9 +19,27 @@ function Layout({ children }) {
           <Nav />
           
           <footer className="footer" role="contentinfo">
-            <p><a href={`mailto:${profile.email}`}>email</a></p>
-            {profile.social.github && <p><a href={profile.social.github} target="_blank" rel="noopener noreferrer">github</a></p>}
-            {profile.social.linkedin && <p><a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a></p>}
+            <div className="footer-contact">
+              <a 
+                href={profile.social.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                linkedin
+              </a>
+              <a href={`mailto:${profile.email}`} className="footer-link">
+                email
+              </a>
+              <a 
+                href={profile.assets.resume_url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                resume
+              </a>
+            </div>
           </footer>
         </aside>
       </div>
