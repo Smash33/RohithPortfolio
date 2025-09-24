@@ -1,0 +1,96 @@
+{
+  "name": "Rohith S V",
+  "title": "Frontend Developer",
+  "email": "rohith.sv20@gmail.com",
+  "phone": "+91 9945848085",
+  "location": "Bengaluru, India",
+  "summary": "Frontend Developer with 2 years of experience with outstanding knowledge on HTML5, CSS, JavaScript and ReactJs. Looking to bring further success to organization by leveraging strong skillset and proactive demeanor.",
+  "skills": {
+    "languages": ["TypeScript", "JavaScript", "HTML5", "CSS", "Carbon Design System"],
+    "frameworks": ["ReactJS", "Redux/Toolkit", "NextJS"],
+    "testing": ["Jest", "React Testing Library"],
+    "tools": ["Figma", "SonarQube", "Swagger", "Git", "Jira", "Trello"],
+    "os": ["Windows", "Linux"]
+  },
+  "work": [
+    {
+      "role": "Front end developer",
+      "company": "MPS limited",
+      "location": "Bengaluru, India",
+      "dates": "Dec 2024 – Current",
+      "bullets": [
+        "Building and maintaining scalable web applications with ReactJS, NextJS, and Redux Toolkit.",
+        "Developing reusable UI components aligned with Carbon Design System standards.",
+        "Collaborating with cross-functional teams in Agile sprints to deliver business-critical features.",
+        "Conducting code reviews, debugging, and implementing unit testing for stability.",
+        "Managing workflows and tasks using Git, Jira, and Trello for seamless project delivery."
+      ]
+    },
+    {
+      "role": "Front end developer",
+      "company": "Estuate Software Private Ltd",
+      "location": "Bengaluru, India",
+      "dates": "Aug 2022 – Nov 2024",
+      "bullets": [
+        "Designed and developed responsive UIs using ReactJS, Redux/Toolkit, NextJS, HTML5, CSS, and Carbon Design System.",
+        "Collaborated with designers in Figma to translate wireframes into interactive, user-friendly applications.",
+        "Resolved production tickets and optimized performance, ensuring smooth frontend operations.",
+        "Implemented unit testing with Jest and React Testing Library to maintain high code quality.",
+        "Worked in Agile sprints, delivering features on time and participating in planning and reviews."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "ARCHLENZ",
+      "tech": ["TypeScript", "ReactJS", "Redux/Toolkit", "Carbon Design System", "Jest", "React Testing Library"],
+      "description": "Arch Lenz is a web application to query the data from the database.",
+      "bullets": [
+        "Integrating REST APIs using CORS middleware.",
+        "Development of responsive design and user accessibility to support vast range of users.",
+        "Ensuring to support dark and light themes on the website.",
+        "Generating the queries based on the user input.",
+        "Development of Quick User walkthrough feature using React Joyride."
+      ]
+    },
+    {
+      "name": "ARCHIVE-VIEWER",
+      "tech": ["TypeScript", "ReactJS", "Redux/Toolkit", "Carbon Design System", "Jest", "React Testing Library"],
+      "description": "Archive Viewer is a web application to view the data from the archived files which was generated from IBM Infosphere Optim.",
+      "bullets": [
+        "Integrating REST APIs using CORS middleware.",
+        "Development of Role based User management system and User Onboarding pages.",
+        "Development of responsive design and user accessibility to support vast range of users.",
+        "Ensuring to support dark and light themes on the website.",
+        "Development of Quick User walkthrough feature using React Joyride.",
+        "Implemented multiple storage system.",
+        "Supporting 10 different languages using i18next react.",
+        "Resolving vulnerability and code smells while SAST and DAST scanning."
+      ]
+    },
+    {
+      "name": "AJE (American Journal Experts)",
+      "tech": ["JavaScript", "React", "Jest", "NextJS", "Redux/Thunk"],
+      "description": "AJE specializes in assisting researchers, particularly non-native English speakers, with academic editing, translation, and manuscript preparation services.",
+      "bullets": [
+        "Integrating REST APIs using CORS middleware.",
+        "Bug fixes and development of Unit Testing cases.",
+        "Participating in code reviews for the merge requests.",
+        "Enhancing the UI based on client requirement.",
+        "Worked on multiple repositories simultaneously."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering (B.E.) | Mechanical",
+      "school": "SVIT College of Engineering, India",
+      "years": "2018-2022"
+    }
+  ],
+  "social": {
+    "github": "",
+    "linkedin": "",
+    "website": ""
+  }
+}
