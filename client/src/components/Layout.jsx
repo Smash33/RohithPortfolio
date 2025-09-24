@@ -15,13 +15,15 @@ function Layout({ children }) {
 
         <aside className="sidebar" role="complementary">
           {showSidebarHeader && (
-            <header className="header">
-              <h1 className="name">{profile.name}</h1>
-              <p className="title">{profile.title}</p>
-            </header>
+            <div className="profile-header">
+              <div className="profile-info">
+                <h1 className="name">{profile.name}</h1>
+                <p className="title">{profile.title}</p>
+              </div>
+              <Nav />
+            </div>
           )}
-
-          <Nav />
+          {!showSidebarHeader && <Nav />}
         </aside>
       </div>
     </div>

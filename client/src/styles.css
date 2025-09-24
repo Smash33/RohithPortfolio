@@ -71,6 +71,18 @@ a:hover {
   margin-bottom: 40px;
 }
 
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-info {
+  flex-shrink: 0;
+}
+
 .name {
   font-size: 24px;
   font-weight: bold;
@@ -85,10 +97,13 @@ a:hover {
 .nav-links {
   list-style: none;
   margin-bottom: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .nav-links li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .nav-links a {
