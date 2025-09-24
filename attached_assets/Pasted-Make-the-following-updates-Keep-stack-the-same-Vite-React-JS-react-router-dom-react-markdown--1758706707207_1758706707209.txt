@@ -1,0 +1,76 @@
+Make the following updates. Keep stack the same (Vite + React JS, react-router-dom, react-markdown). Do NOT add new libraries.
+
+# 1) HOME PAGE — simplify and center
+- Remove the current intro/paragraph on Home.
+- Layout (centered, minimal, old-school):
+  - Top center: big bold name “Rohith S V”.
+  - Directly below (smaller): “Frontend Developer”.
+  - Below that: profile image from /public/profile.jpg (centered, max-width ~180px).
+  - Below the image: inline bracket links for contact:
+    [linkedin] [email] [resume]
+    • [email] = mailto:rohith.sv20@gmail.com
+    • [linkedin] = use profile.json -> social.linkedin if present; else placeholder “#” with a TODO comment.
+    • [resume] = link to /Rohith_SV_Resume.pdf (place the file under /public)
+- Navigation: keep [home] [work] [blog] [about] on the right side, but move it inward so it sits closer to the centered block (not flush to the far edge). Keep spacing clean (use a fixed max-width column and ~48–64px gap).
+
+# 2) ABOUT PAGE — personal narrative + tools section
+- Replace the current tool-grid “About” with this personal narrative (render paragraphs, not bullets):
+
+  Hi, I’m Rohith, a frontend developer with 2 years of experience building responsive, user-friendly applications. Most of my work has been with ReactJS, NextJS, and Redux, and I’ve enjoyed collaborating with teams to design and deliver scalable web apps.
+
+  I started out studying Mechanical Engineering, but I quickly found myself drawn into the problem-solving and creativity of web development. Since then, I’ve built and maintained applications used in production, created reusable UI components with Carbon Design System, and contributed to projects that improve both usability and performance.
+
+  What I like most is the mix of design and engineering — turning ideas into something that works smoothly in a browser. I’ve worked with tools like Figma, Git, Jira, and Trello to ship features in agile sprints, and I’m comfortable with testing frameworks like Jest and React Testing Library to keep code reliable.
+
+  Outside of work, I’m curious about new frameworks and enjoy exploring ways to make interfaces more accessible and user-friendly. I see every project as a chance to learn something new while building something that makes life easier for users.
+
+- Below the narrative, add a subheading: “tools I’ve worked with”
+  Under it, list his tools in four simple bullet groups (no cards, keep retro style):
+
+  Languages: TypeScript, JavaScript, HTML5, CSS, Carbon Design System
+  Frameworks: ReactJS, Redux/Toolkit, NextJS
+  Testing: Jest, React Testing Library
+  Tools: Figma, SonarQube, Swagger, Git, Jira, Trello
+  OS: Windows, Linux
+
+- Remove the Education section from About.
+
+# 3) GLOBAL CONTACT LINKS
+- In the header or footer used across all pages, add inline bracket links: [linkedin] [email] [resume]
+  • [email] uses mailto: from profile.json email.
+  • [linkedin] uses profile.json social.linkedin.
+  • [resume] points to /Rohith_SV_Resume.pdf in /public.
+- Keep bracket style and monospace aesthetic. Ensure links have hover underline and visible focus.
+
+# 4) DATA & FILES
+- In src/data/profile.json add/update:
+  {
+    "name": "Rohith S V",
+    "title": "Frontend Developer",
+    "email": "rohith.sv20@gmail.com",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rohithsv"   // placeholder if unknown
+    },
+    "assets": {
+      "resume_url": "/Rohith_SV_Resume.pdf",
+      "photo": "/profile.jpg"
+    }
+  }
+- I will upload /public/Rohith_SV_Resume.pdf and /public/profile.jpg if not present. Use these paths.
+
+# 5) STYLING
+- Keep minimal CSS. Center main stack on Home. Set a comfortable vertical rhythm (e.g., 12–16px baseline).
+- Right-side nav: use position: sticky or a simple flex layout so it sits near the content column; keep ~48–64px gap.
+- Maintain responsiveness: on mobile, stack nav below the centered content.
+
+# 6) PAGES TO LEAVE AS IS
+- Do NOT change Work and Blog pages (they’re already good).
+
+# 7) ACCEPTANCE CHECKS
+- Home shows ONLY: Name, Title, Photo, and [linkedin] [email] [resume]; no long intro.
+- About shows the narrative + “tools I’ve worked with” lists; Education removed.
+- Global bracket links appear on all pages and work.
+- Nav sits closer to the content on the right; looks balanced on desktop; stacks on mobile.
+- No new packages; build runs clean.
+
+After implementing, run the app and show me the updated Home and About screenshots in the preview.

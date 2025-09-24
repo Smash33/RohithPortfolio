@@ -90,7 +90,11 @@
   ],
   "social": {
     "github": "",
-    "linkedin": "",
+    "linkedin": "https://www.linkedin.com/in/rohithsv",
     "website": ""
+  },
+  "assets": {
+    "resume_url": "/Rohith_SV_Resume.pdf",
+    "photo": "/profile.jpg"
   }
 }

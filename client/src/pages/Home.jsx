@@ -19,7 +19,6 @@ function Home() {
 
         <div className="contact-info">
           <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
-          <p>{profile.phone}</p>
           <p>{profile.location}</p>
         </div>
       </section>
