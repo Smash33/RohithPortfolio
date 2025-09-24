@@ -6,6 +6,7 @@
   --link: #111;
   --accent: #2563eb;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --hero-gap: 32px;
 }
 
 * {
@@ -379,10 +380,8 @@ a:focus {
   max-width: 180px;
   height: auto;
   border-radius: 4px;
-  margin-bottom: 32px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  object-fit: cover;
 }
 
 .social-links {
@@ -448,6 +447,64 @@ a:focus {
   color: var(--text);
 }
 
+/* Hero Container Styles */
+.hero-container {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: var(--hero-gap);
+  margin: var(--hero-gap) 0;
+}
+
+.hero-line {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+  width: 100%;
+}
+
+.hero-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-main .nav-links {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.hero-main .nav-links li {
+  margin-bottom: 8px;
+}
+
+.hero-main .nav-links a {
+  color: var(--link);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-main .nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hero-main .nav-links a:focus {
+  outline: 2px dotted var(--text);
+  outline-offset: 2px;
+}
+
+.hero-main .nav-links a.active {
+  font-weight: bold;
+}
+
+.hero-main .nav-links a::before {
+  content: "[";
+}
+
+.hero-main .nav-links a::after {
+  content: "]";
+}
+
 /* Mobile Updates for Home Page */
 @media (max-width: 768px) {
   .home-center {
@@ -458,5 +515,26 @@ a:focus {
   .social-links {
     justify-content: center;
     gap: 12px;
+  }
+
+  .hero-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-main .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-main .nav-links li {
+    margin-bottom: 0;
+  }
+
+  :root {
+    --hero-gap: 24px;
   }
 }
