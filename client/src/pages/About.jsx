@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import profile from '../data/profile.json';
+import SocialLinks from '../components/SocialLinks';
 
 function About() {
   useEffect(() => {
@@ -28,7 +29,7 @@ function About() {
 
       <section className="section">
         <h2 className="section-title">tools I've worked with</h2>
-        
+
         <div className="tools-list">
           <div className="tool-category">
             <strong>Languages:</strong> {profile.skills.languages.join(', ')}
@@ -47,6 +48,8 @@ function About() {
           </div>
         </div>
       </section>
+
+      <SocialLinks />
     </>
   );
 }

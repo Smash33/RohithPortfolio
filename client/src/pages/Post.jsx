@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { getPostBySlug } from '../utils/markdown';
 import profile from '../data/profile.json';
+import SocialLinks from '../components/SocialLinks';
 
 function Post() {
   const { slug } = useParams();
@@ -59,6 +60,8 @@ function Post() {
       <article className="section">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </article>
+
+      <SocialLinks />
 
       <nav className="post-navigation">
         <Link to="/blog">[← back to blog]</Link>

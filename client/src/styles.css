@@ -4,6 +4,7 @@
   --muted: #555;
   --rule: #ddd;
   --link: #111;
+  --accent: #2563eb;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -19,6 +20,10 @@ body {
   color: var(--text);
   line-height: 1.6;
   font-size: 14px;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
 }
 
 .skip-link {
@@ -44,10 +49,12 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: minmax(0, 720px) minmax(160px, 200px);
   gap: 48px;
   min-height: 100vh;
   padding: 40px 0;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .main-content {
@@ -321,6 +328,10 @@ pre code {
     margin-bottom: 0;
   }
 
+  .social-links {
+    justify-content: center;
+  }
+
   .profile-image {
     float: none;
     display: block;
@@ -374,34 +385,47 @@ a:focus {
   margin-right: auto;
 }
 
-.home-contact {
+.social-links {
   display: flex;
-  justify-content: center;
-  gap: 16px;
   flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: flex-start;
 }
 
-.home-contact a {
+.social-links--left {
+  justify-content: flex-start;
+}
+
+.social-links--center {
+  justify-content: center;
+}
+
+.social-links--right {
+  justify-content: flex-end;
+}
+
+.social-links a {
   color: var(--link);
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
 }
 
-.home-contact a:hover {
+.social-links a:hover {
   text-decoration: underline;
 }
 
-.home-contact a:focus {
+.social-links a:focus {
   outline: 2px dotted var(--text);
   outline-offset: 2px;
 }
 
-.home-contact a::before {
+.social-links a::before {
   content: "[";
 }
 
-.home-contact a::after {
+.social-links a::after {
   content: "]";
 }
 
@@ -424,36 +448,6 @@ a:focus {
   color: var(--text);
 }
 
-/* Footer Contact Links */
-.footer-contact {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-link {
-  color: var(--muted) !important;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-.footer-link:focus {
-  outline: 2px dotted var(--text);
-  outline-offset: 2px;
-}
-
-.footer-link::before {
-  content: "[";
-}
-
-.footer-link::after {
-  content: "]";
-}
-
 /* Mobile Updates for Home Page */
 @media (max-width: 768px) {
   .home-center {
@@ -461,12 +455,7 @@ a:focus {
     padding: 0 20px;
   }
 
-  .home-contact {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .footer-contact {
+  .social-links {
     justify-content: center;
     gap: 12px;
   }
