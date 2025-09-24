@@ -1,0 +1,147 @@
+You are building a production-ready React portfolio website for **Rohith S V** with a minimal, old-school aesthetic (like maxmynter.com). 
+I will attach a PDF resume; parse it and fill real content from there. 
+If parsing fails, ask me for the missing field names, but still scaffold everything.
+
+## Tech + Project Setup
+- Create a React app using **Vite + JavaScript (not TypeScript)**.
+- Install **react-router-dom@6** only (keep deps minimal). No CSS frameworks.
+- Project structure:
+  /src
+    /components
+      Layout.jsx           (shared shell + header + nav + footer)
+      Nav.jsx              (inline [home] [blog] [work] [about] links with active state)
+      PostList.jsx         (lists blog posts)
+    /pages
+      Home.jsx
+      Work.jsx
+      Blog.jsx
+      Post.jsx             (blog detail page by slug)
+      About.jsx
+      NotFound.jsx
+    /data
+      posts/*.md           (2 sample markdown posts)
+      profile.json         (parsed details from resume)
+    main.jsx
+    App.jsx
+    styles.css
+  /public
+    profile.jpg (placeholder)
+    favicon.ico
+- Add a **README.md** with run/deploy instructions (npm i, npm run dev, how to add blog posts).
+
+## Routing
+- Use React Router v6. Routes:
+  "/"          -> <Home/>
+  "/work"      -> <Work/>
+  "/blog"      -> <Blog/>
+  "/blog/:slug"-> <Post/>
+  "/about"     -> <About/>
+  "*"          -> <NotFound/>
+
+## Layout & Style (old-school / retro)
+- White background, black text, **monospace font** stack:
+  `font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;`
+- Big name header at top-left. Under it, short tagline from resume (e.g., “Frontend Developer”).
+- Thin horizontal rules, generous whitespace. Links are plain text with **bracketed labels** like `[home] [blog] [work] [about]`, underline on hover.
+- **Responsive**:
+  - Desktop: main column with content on the left; a small right column with the link list.
+  - Mobile: stack everything; nav links centered.
+- Provide a simple color token system in `:root`:
+  --bg:#fafafa; --text:#111; --muted:#555; --rule:#ddd; --link:#111;
+- Accessibility: visible focus outlines, skip-to-content link, proper landmarks (header, nav, main, footer), h1→h2 hierarchy.
+
+## Content (pull from attached resume PDF)
+Create `/src/data/profile.json` at build time from the PDF with these keys:
+{
+  "name": "Rohith S V",
+  "title": "Frontend Developer",
+  "email": "...",
+  "phone": "...",
+  "location": "...",
+  "summary": "...",
+  "skills": {
+    "languages": [...],
+    "frameworks": [...],
+    "testing": [...],
+    "tools": [...],
+    "os": [...]
+  },
+  "work": [
+    {
+      "role": "...",
+      "company": "...",
+      "location": "...",
+      "dates": "...",
+      "bullets": ["...","...","...","..."]
+    },
+    { second job same shape }
+  ],
+  "projects": [
+    { "name":"Archlenz", "tech":[...], "bullets":[... ] },
+    { "name":"Archive Viewer", "tech":[...], "bullets":[... ] },
+    { "name":"AJE", "tech":[...], "bullets":[... ] }
+  ],
+  "education": [
+    { "degree":"B.E. Mechanical", "school":"SVIT College of Engineering", "years":"2018–2022" }
+  ],
+  "social": {
+    "github":"", "linkedin":"", "website":""
+  }
+}
+
+If any field is missing in the PDF, leave a clear TODO comment in the code and display a placeholder on the page.
+
+## Pages (fill with real data from profile.json)
+- **Home.jsx**
+  - Big name + title, short summary paragraph, contact block (email as `mailto:`, phone, location).
+  - Left-aligned profile image `/public/profile.jpg` with alt text “Portrait of Rohith S V”.
+- **Work.jsx**
+  - Reverse-chronological roles. Each entry: role • company — dates, location, then 3–5 bullet points.
+- **Blog.jsx**
+  - Read all Markdown files from `/src/data/posts/*.md`. Show list with title, date, short excerpt (first 160 chars), link to `/blog/:slug`.
+  - Include two starter posts: “hello-world.md” and “notes-on-react.md”.
+- **Post.jsx**
+  - Render a markdown file by slug using `react-markdown`. Provide previous/next links back to Blog.
+- **About.jsx**
+  - Skills as simple bullet lists grouped by category, plus Education section.
+- **NotFound.jsx**
+  - Minimal 404 with a link back to [home].
+
+## Components
+- **Layout.jsx**
+  - Top header with name + title.
+  - Right/side **Nav.jsx** with bracketed links: `[home] [blog] [work] [about]`. Highlight active route.
+  - Footer: plain text + links to GitHub/LinkedIn/email from profile.json.
+- **Nav.jsx**
+  - Keyboard accessible (TAB order), aria-current on active link.
+
+## Styling rules (in styles.css)
+- Keep everything under ~150 lines of CSS.
+- hr styles for separators, code style for blog (pre, code).
+- Link states: default underline on hover; focus outline: 2px dotted.
+
+## SEO & Meta
+- In `index.html`: 
+  - <title>{name} — {title}</title>
+  - meta description from summary (truncate to ~160 chars)
+  - basic Open Graph tags (og:title, og:description)
+  - favicon wired up.
+- Add `robots.txt` allowing indexing.
+
+## Data & Markdown
+- Create a tiny utility that imports all markdown files from `/src/data/posts` and exposes `{ slug, meta, content }`.
+- Each markdown file starts with frontmatter (title, date, summary). If frontmatter isn’t used, infer title from first heading.
+
+## DX (developer experience)
+- Add npm scripts:
+  - "dev": "vite"
+  - "build": "vite build"
+  - "preview": "vite preview"
+- README explains how to add a new blog post (drop a .md into /src/data/posts) and how to edit profile.json.
+
+## Final polish
+- Ensure lighthouse basics: fast, semantic, accessible.
+- Provide a working 404 route, and handle bad blog slugs gracefully (show “Post not found”).
+- Commit everything. Then print the local dev URL and the build command.
+
+When you finish scaffolding, RUN the app so I can preview, then I’ll deploy.
