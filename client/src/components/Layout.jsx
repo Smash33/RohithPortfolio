@@ -13,16 +13,18 @@ function Layout({ children }) {
           {children}
         </main>
 
-        <aside className="sidebar" role="complementary">
-          {showSidebarHeader && (
-            <header className="header">
-              <h1 className="name">{profile.name}</h1>
-              <p className="title">{profile.title}</p>
-            </header>
-          )}
+        {location.pathname !== '/' && (
+          <aside className="sidebar" role="complementary">
+            {showSidebarHeader && (
+              <header className="header">
+                <h1 className="name">{profile.name}</h1>
+                <p className="title">{profile.title}</p>
+              </header>
+            )}
 
-          <Nav />
-        </aside>
+            <Nav />
+          </aside>
+        )}
       </div>
     </div>
   );
