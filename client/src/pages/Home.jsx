@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import profile from '../data/profile.json';
+import SocialLinks from '../components/SocialLinks';
 
 function Home() {
   useEffect(() => {
@@ -17,19 +18,7 @@ function Home() {
         className="home-photo" 
       />
       
-      <div className="home-contact">
-        <a 
-          href={profile.social.linkedin} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          linkedin
-        </a>
-        <a href={`mailto:${profile.email}`}>email</a>
-        <a href={profile.assets.resume_url} target="_blank" rel="noopener noreferrer">
-          resume
-        </a>
-      </div>
+      <SocialLinks align="center" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import profile from '../data/profile.json';
 import PostList from '../components/PostList';
+import SocialLinks from '../components/SocialLinks';
 
 function Blog() {
   useEffect(() => {
@@ -14,6 +15,8 @@ function Blog() {
       </header>
 
       <PostList />
+
+      <SocialLinks />
     </>
   );
 }

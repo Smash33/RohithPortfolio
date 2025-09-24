@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import profile from '../data/profile.json';
+import SocialLinks from '../components/SocialLinks';
 
 function Work() {
   useEffect(() => {
@@ -52,6 +53,8 @@ function Work() {
           </div>
         ))}
       </section>
+
+      <SocialLinks />
     </>
   );
 }
