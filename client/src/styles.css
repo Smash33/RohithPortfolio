@@ -50,7 +50,7 @@ a:hover {
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 720px) minmax(160px, 200px);
-  gap: 48px;
+  gap: 24px;
   min-height: 100vh;
   padding: 40px 0;
   justify-content: center;
@@ -406,7 +406,7 @@ a:focus {
 }
 
 .social-links a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
